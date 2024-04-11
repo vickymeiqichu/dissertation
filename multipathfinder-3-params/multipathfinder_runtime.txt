@@ -1,0 +1,38 @@
+julia> @time multipathfinder_1_cell_10_runs = multipathfinder(model, 8_000; nruns=10, init_scale=10, optimizer=LBFGS(m=6)) # summary statistics, and timing process
+┌ Warning: 2 (5.7%) updates to the inverse Hessian estimate were rejected to keep it positive definite.
+└ @ Pathfinder ~/.julia/packages/Pathfinder/WNKEJ/src/singlepath.jl:213
+┌ Warning: 2 (4.8%) updates to the inverse Hessian estimate were rejected to keep it positive definite.
+└ @ Pathfinder ~/.julia/packages/Pathfinder/WNKEJ/src/singlepath.jl:213
+┌ Warning: 1 (2.9%) updates to the inverse Hessian estimate were rejected to keep it positive definite.
+└ @ Pathfinder ~/.julia/packages/Pathfinder/WNKEJ/src/singlepath.jl:213
+┌ Warning: Pareto shape k = 0.72 > 0.7. Resulting importance sampling estimates are likely to be unstable.
+└ @ PSIS ~/.julia/packages/PSIS/jwznT/src/core.jl:314
+2916.898003 seconds (20.82 G allocations: 1.904 TiB, 8.64% gc time)
+Multi-path Pathfinder result
+  runs: 10
+  draws: 8000
+  Pareto shape diagnostic: 0.72 (bad)
+
+julia> multipathfinder_1_cell_10_runs.draws_transformed
+Chains MCMC chain (8000×3×1 Array{Float64, 3}):
+
+Iterations        = 1:1:8000
+Number of chains  = 1
+Samples per chain = 8000
+parameters        = P₀, h, τ
+
+Summary Statistics
+  parameters        mean        std      mcse    ess_bulk    ess_tail      rhat   ess_per_sec
+      Symbol     Float64    Float64   Float64     Float64     Float64   Float64       Missing
+
+          P₀   3539.2226   149.8726    1.6721   7987.2960   7957.9652    1.0001       missing
+           h      5.6249     0.3800    0.0044   7391.9186   8043.9493    1.0000       missing
+           τ     34.1085     3.7450    0.0415   8058.3801   7869.5985    0.9999       missing
+
+Quantiles
+  parameters        2.5%       25.0%       50.0%       75.0%       97.5%
+      Symbol     Float64     Float64     Float64     Float64     Float64
+
+          P₀   3216.2782   3475.9627   3556.0669   3632.1049   3740.4344
+           h      4.6945      5.4345      5.7615      5.9046      5.9926
+           τ     26.6320     31.8457     34.8763     36.9107     38.7939

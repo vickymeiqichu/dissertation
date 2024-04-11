@@ -1,0 +1,35 @@
+julia> hmc_3_param = sample(model, NUTS(250, 0.8), MCMCThreads(), 500, 4) # summary statistics
+┌ Info: Found initial step size
+└   ϵ = 0.05
+┌ Info: Found initial step size
+└   ϵ = 0.05
+┌ Info: Found initial step size
+└   ϵ = 0.05
+┌ Info: Found initial step size
+└   ϵ = 0.05
+
+Sampling (4 threads) 100%|██████████████████████████████████████████████████████████████████████| Time: 7:52:23         Chains MCMC chain (500×15×4 Array{Float64, 3}):
+
+Iterations        = 251:1:750
+Number of chains  = 4
+Samples per chain = 500
+Wall duration     = 28343.7 seconds
+Compute duration  = 81677.93 seconds
+parameters        = P₀, h, τ
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters        mean        std      mcse   ess_bulk   ess_tail      rhat   ess_per_sec
+      Symbol     Float64    Float64   Float64    Float64    Float64   Float64       Float64
+
+          P₀   3029.0847   441.7135   18.8904   623.8554   459.7214    1.0079        0.0076
+           h      4.3270     0.8596    0.0345   615.6544   466.7802    1.0074        0.0075
+           τ     25.3957     6.7926    0.2340   791.4942   536.2594    1.0059        0.0097
+
+Quantiles
+  parameters        2.5%       25.0%       50.0%       75.0%       97.5%
+      Symbol     Float64     Float64     Float64     Float64     Float64
+
+          P₀   1901.8428   2800.0808   3102.2046   3359.2672   3645.2926
+           h      2.4682      3.7588      4.3382      4.9818      5.8048
+           τ     11.6019     20.6285     25.7300     30.1881     38.2692

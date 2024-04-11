@@ -1,0 +1,12 @@
+julia> @time pathfinder_1_cell = pathfinder(model; ndraws=8_000, optimizer=LBFGS(m=6), init_scale=10) # summary statistics, and timing process
+227.128963 seconds (1.05 G allocations: 273.356 GiB, 13.40% gc time, 0.01% compilation time)
+Single-path Pathfinder result
+  tries: 1
+  draws: 8000
+  fit iteration: 13 (total: 37)
+  fit ELBO: -607.27 ± 0.55
+  fit distribution: MvNormal{Float64, Pathfinder.WoodburyPDMat{Float64, Diagonal{Float64, Vector{Float64}}, Matrix{Float64}, Matrix{Float64}, Pathfinder.WoodburyPDFactorization{Float64, Diagonal{Float64, Vector{Float64}}, LinearAlgebra.QRCompactWYQ{Float64, Matrix{Float64}, Matrix{Float64}}, UpperTriangular{Float64, Matrix{Float64}}}}, Vector{Float64}}(
+dim: 3
+μ: [-0.9709438278059328, 1.552020638751055, 3.6807987484830442]
+Σ: [0.00833931353705631 0.12888414266765147 0.19351080024692896; 0.12888414266765147 2.3462424122090986 3.481196760349129; 0.19351080024692896 3.481196760349129 8.032748264378588]
+)

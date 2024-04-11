@@ -1,0 +1,21 @@
+Sampling (4 threads) 100%|██████████████████████████████████████████████████████████████████████| Time: 4:46:02         Chains MCMC chain (2000×13×4 Array{Float64, 3}):
+
+Iterations        = 1001:1:3000
+Number of chains  = 4
+Samples per chain = 2000
+Wall duration     = 17154.54 seconds
+Compute duration  = 49437.58 seconds
+parameters        = P₀
+internals         = lp, n_steps, is_accept, acceptance_rate, log_density, hamiltonian_energy, hamiltonian_energy_error, max_hamiltonian_energy_error, tree_depth, numerical_error, step_size, nom_step_size
+
+Summary Statistics
+  parameters        mean       std      mcse    ess_bulk    ess_tail      rhat   ess_per_sec
+      Symbol     Float64   Float64   Float64     Float64     Float64   Float64       Float64
+
+          P₀   3432.5116   65.0921    1.2415   2753.6671   4034.3681    1.0009        0.0557
+
+Quantiles
+  parameters        2.5%       25.0%       50.0%       75.0%       97.5%
+      Symbol     Float64     Float64     Float64     Float64     Float64
+
+          P₀   3305.6381   3386.7742   3433.0498   3476.1184   3559.5362
